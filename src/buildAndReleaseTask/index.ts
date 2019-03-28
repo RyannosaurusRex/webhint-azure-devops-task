@@ -4,26 +4,19 @@ const fs = require('fs');
 
 async function run() {
     try {
+        console.log('running!');
         const webAddress: string = tl.getInput('webaddress', true);
-        console.log(`The website we'll be checking is "${webAddress}"`)
+
+        console.log(`The website we'll be checking is "${webAddress}"`);
 
         if (webAddress == '' || webAddress === `undefined`) {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'The web address is required.');
             return;
         }
-        // try {
-        //     execSync(`npm install -g --engine-strict hint`, {stdio: `inherit`});
-        // } catch (ex)
-        // {
-        //     console.log(`Uncaught exception installing webhint!: ${ex}`);
-        // }
 
-        try {
-            execSync(`npx hint ${webAddress}`, {stdio: `inherit`});
-        } catch (ex)
-        {
-            console.log(`Uncaught exception running webhint!: ${ex}`);
-        }
+        var result = execSync(`npx hint ${webAddress}`, {stdio: 'inherit'});
+        console.log(`Logging results: ${result.stdout}`);
+        tl.setResult(tl.TaskResult.Succeeded, "Completed successfully.");
     }
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);

@@ -5,6 +5,6 @@ import path = require('path');
 let taskPath = path.join(__dirname, '..', 'index.js');
 let tmr: tmrm.TaskMockRunner = new tmrm.TaskMockRunner(taskPath);
 
-tmr.setInput('webaddress', 'https://ryanhayes.net');
+tmr.setInput('webaddress', 'https://ryanhayes.dev');
 
 tmr.run();

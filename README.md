@@ -7,7 +7,7 @@ An Azure DevOps task for running webhint (https://webhint.io/) and generating a 
 
 ### To contribute
 
-You'll need a few things installed to contribute, and having Chocolatey makes this a bit easier to get running.:
+You'll need a few things installed to contribute, and having Chocolatey (on Windows) makes this a bit easier to get running.:
 - Node.js => `chocolatey install nodejs`
 - Python => `chocolatey install python`
 - TypeScript => `chocolatey install typescript`

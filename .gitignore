@@ -86,4 +86,6 @@ typings/
 
 hint-report/
 *.js
+*.map
 .taskkey
+.vscode/
